@@ -1,0 +1,88 @@
+import random 
+suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
+ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace')
+values = {'Two': 2, 'Three': 3, 'Four': 4, 'Five': 5, 'Six': 6, 'Seven':7, 'Eight': 8, 'Nine': 9, 'Ten': 10, 'Jack': 11,
+          'Queen': 12, 'King': 13, 'Ace': 14}
+
+class card(object):
+    def __init__(self, suit, rank):
+        self.suit = suit
+        self.rank = rank
+        self.value = values[rank]
+    def __str__(self):
+        return self.rank + ' of ' + self.suit
+        
+        
+class deck(object):
+    def __init__(self):
+        self.all_cards = []
+        
+        for suit in suits:
+            for rank in ranks:
+                created_card = card(suit, rank)
+                self.all_cards.append(created_card)
+    def shuffle(self):
+        random.shuffle(self.all_cards)
+    
+    def deal_one(self):
+        return self.all_cards.pop()
+
+class coin():
+    def __init__(self, value):
+        self.value = value
+        
+class bank_acct():
+    def __init__(self, balance):
+        self.balance = balance
+    
+    def withdraw(self, amount):
+        temp_balance = self.balance
+        self.balance -= amount
+        if self.balance < 0:
+            self.balance = temp_balance
+            print('Not enough balance')
+        else:
+            print('Withdraw successfull. Available balance: {}'.format(self.balance))
+            
+class player():
+    def __init__(self):
+        self.all_cards = []
+    def add_cards(self,cards):
+        if type(cards) == type([]):
+            for i in range(len(cards)):
+                self.add_cards.extend(cards[i])
+        else:
+            self.add_cards.append(cards)
+    def removeone(self):
+        return self.all_cards.pop()
+        
+class dealer():
+    def __init__(self):
+        self.all_cards = []
+    def add_cards(self,cards):
+        if type(cards) == type([]):
+            for i in range(len(cards)):
+                self.add_cards.extend(cards[i])
+        else:
+            self.add_cards.append(cards)
+    def removeone(self):
+        return self.all_cards.pop()
+        
+player_deck =        
+while player_balance != 0:
+    bet_amount = int(input('Choose a bet: 1.50$ , 2.100$, 3.500$'))
+    player_cards = []
+    dealer_cards = []
+    for i in range(2):
+        player_cards.append(player.removeone())
+        dealer_cards.append(dealer.removeone())
+    player_sum = sum(filter(x for x in player_cards))
+    dealer_sum = sum(filter(x for x in dealer_cards))
+    print('Dealer faceup card value {}'.format(dealer_sum)
+    print('Sum of player value {}'.format(player_sum))
+    game_on = True
+    
+    player turn
+    
+    while game_on:
+        
